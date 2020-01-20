@@ -1,0 +1,12 @@
+POST http://localhost:8080/student
+Content-Type: application/json
+
+{
+  "id": 1,
+  "name": "Dios",
+  "course": "CS555",
+  "grade": 99,
+  "picture": "pic"
+}
+
+###
