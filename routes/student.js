@@ -8,7 +8,7 @@ const storage = multer.diskStorage({
 		cb(null, path.join(__dirname, "/../public/images/"));
 	},
 	filename: function (req, file, cb) {
-		cb(null, Date.now()+".jpg");
+		cb(null, Date.now() + ".jpg");
 	}
 });
 const upload = multer({
@@ -19,7 +19,7 @@ const upload = multer({
 		}
 		cb(null, true);
 	},
-	limits:{
+	limits: {
 		fileSize: 3 * 1024 * 1024
 	}
 });
@@ -41,16 +41,24 @@ router.get('/', function (req, res, next) {
 	res.status(200).json(selected);
 });
 /* POST create student. */
-router.post('/', upload.single('picture'), function (req, res, next) {
+const gg = () => {
+	return (req, res, next) => {
+		if (req.method === "POST") {
+			const {id, name, course, grade} = req.body;
+			console.log(req);
+			if (id && name && course && grade) return next();
+			else return next("Data error");
+		}
+	}
+};
+router.post('/', upload.single('picture'), gg(), function (req, res, next) {
 	//handling image
 	const {file} = req;
-	if(!file) return next("No image");
+	if (!file) return next("No image");
 	//handling data
 	const {id, name, course, grade} = req.body;
-	if (id && name && course && grade) {
-		data.push({id: id, name: name, course: course, grade: grade, picture: file.filename});
-		res.status(200).json(data);
-	} else return next("Data error");
+	data.push({id: id, name: name, course: course, grade: grade, picture: file.filename});
+	res.status(200).json(data);
 });
 
 /* DELETE user */

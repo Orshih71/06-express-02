@@ -24,7 +24,14 @@ app.use(cors());
 app.use(express.urlencoded({extended: false}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
+// app.use('/student', function (req, res, next) {
+// 	if(req.method === "POST") {
+// 		const {id, name, course, grade} = req.body;
+// 		console.log(req);
+// 		if (id && name && course && grade) return next();
+// 		else return next("Data error");
+// 	}
+// });
 // routing
 app.use('/student', studentRouter);
 
