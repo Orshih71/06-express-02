@@ -6,9 +6,7 @@ const logger = require('morgan');
 const cors = require('cors');
 const fs = require('fs');
 
-const indexRouter = require('./routes/index');
 const studentRouter = require('./routes/student');
-
 const app = express();
 
 // view engine setup
@@ -21,6 +19,7 @@ app.use(logger('common', {
 	stream: fs.createWriteStream('./access.log', {flags: 'a'})
 }));
 app.use(express.json());
+app.use("/picture/", express.static("public/images"));
 app.use(cors());
 app.use(express.urlencoded({extended: false}));
 app.use(cookieParser());
@@ -41,7 +40,7 @@ app.use(function (err, req, res, next) {
 	res.locals.error = req.app.get('env') === 'development' ? err : {};
 
 	res.status(err.status || 500);
-	res.render('error');
+	res.send(err);
 });
 
 module.exports = app;

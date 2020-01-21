@@ -1,12 +1,28 @@
-POST http://localhost:8080/student
-Content-Type: application/json
 
-{
-  "id": 1,
-  "name": "Dios",
-  "course": "CS555",
-  "grade": 99,
-  "picture": "pic"
-}
+POST http://localhost:8080/student
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="picture"; filename="BATORSHIKH.jpg"
+
+< C:/Users/Dios/Downloads/downloads 2019.3.14/BATORSHIKH.jpg
+--WebAppBoundary
+Content-Disposition: form-data; name="id"
+
+5
+--WebAppBoundary
+Content-Disposition: form-data; name="name"
+
+Bat-Orshikh
+--WebAppBoundary
+Content-Disposition: form-data; name="course"
+
+CS555
+--WebAppBoundary
+Content-Disposition: form-data; name="grade"
+
+99
+--WebAppBoundary--
+
 
 ###

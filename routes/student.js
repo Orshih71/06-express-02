@@ -1,8 +1,29 @@
 const express = require('express');
+const multer = require('multer');
+const path = require('path');
 const router = express.Router();
-const {filter} = require('rxjs/operator');
-const upload = require('multer');
-const multer = upload({dest:"./public/images"});
+
+const storage = multer.diskStorage({
+	destination: function (req, file, cb) {
+		cb(null, path.join(__dirname, "/../public/images/"));
+	},
+	filename: function (req, file, cb) {
+		cb(null, Date.now()+".jpg");
+	}
+});
+const upload = multer({
+	storage: storage,
+	fileFilter: function (req, file, cb) {
+		if (path.extname(file.originalname) !== '.jpg') {
+			return cb('File extension is wrong');
+		}
+		cb(null, true);
+	},
+	limits:{
+		fileSize: 3 * 1024 * 1024
+	}
+});
+
 const data = [
 	{id: 1, name: "Asaad Saad", course: "CS572", picture: "1570286884.jpg", grade: 95},
 	{id: 2, name: "Bat-Oshikh Baatar", course: "CS572", picture: "1570286884.jpg", grade: 100},
@@ -17,27 +38,30 @@ router.get('/', function (req, res, next) {
 		if (v.id === parseInt(id)) return v;
 	});
 	else selected = data;
-	res.status(200).send(selected);
+	res.status(200).json(selected);
 });
 /* POST create student. */
-router.post('/', multer.single('picture'),function (req, res, next) {
-	const {picture} = req;
+router.post('/', upload.single('picture'), function (req, res, next) {
+	//handling image
+	const {file} = req;
+	if(!file) return next("No image");
+	//handling data
 	const {id, name, course, grade} = req.body;
-	if (id && name && course && grade && picture) {
-		const newData = Object.assign({}, data).push({id: id, name: name, course: course, grade: grade, picture:picture});
-		res.status(200).send(newData);
+	if (id && name && course && grade) {
+		data.push({id: id, name: name, course: course, grade: grade, picture: file.filename});
+		res.status(200).json(data);
 	} else return next("Data error");
 });
 
 /* DELETE user */
-router.delete('/', function (req, res, next) {
-	const {id} = req.query;
+router.delete('/:id', function (req, res, next) {
+	const {id} = req.params;
 	let deleted = {}, selected;
 	if (id) selected = data.filter(v => {
-		if (v.id === parseInt(id)) return v;
+		if (v.id !== parseInt(id)) return v;
 		else deleted = v;
 	});
-	if(deleted.isEmpty()) return next("Student Not Found");
-	else res.status(200).send(selected);
+	if (deleted.length === 0) return next("Student Not Found");
+	else res.status(200).json(selected);
 });
 module.exports = router;
