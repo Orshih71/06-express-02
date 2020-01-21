@@ -41,7 +41,7 @@ router.get('/', function (req, res, next) {
 	res.status(200).json(selected);
 });
 /* POST create student. */
-const gg = () => {
+const validation = () => {
 	return (req, res, next) => {
 		if (req.method === "POST") {
 			const {id, name, course, grade} = req.body;
@@ -51,7 +51,7 @@ const gg = () => {
 		}
 	}
 };
-router.post('/', upload.single('picture'), gg(), function (req, res, next) {
+router.post('/', upload.single('picture'), validation(), function (req, res, next) {
 	//handling image
 	const {file} = req;
 	if (!file) return next("No image");

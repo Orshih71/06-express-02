@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eed22fac-eef7-4819-a208-d8f114fedaa1" name="Default Changelist" comment="HW 6">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+    <list default="true" id="eed22fac-eef7-4819-a208-d8f114fedaa1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/access.log" beforeDir="false" afterPath="$PROJECT_DIR$/access.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/www" beforeDir="false" afterPath="$PROJECT_DIR$/bin/www" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/student.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/student.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -881,7 +877,7 @@
       <workItem from="1579534142746" duration="4087000" />
       <workItem from="1579549472866" duration="6927000" />
       <workItem from="1579561264374" duration="8140000" />
-      <workItem from="1579571014068" duration="14671000" />
+      <workItem from="1579571014068" duration="14793000" />
     </task>
     <task id="LOCAL-00001" summary="HW 6">
       <created>1579499811932</created>
@@ -904,7 +900,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579583793419</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="HW 7">
+      <created>1579585735764</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1579585735764</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -933,10 +936,10 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="372" y="77" key="#start/0.0.1366.768@0.0.1366.768" timestamp="1579487298446" />
-    <state x="253" y="0" key="CommitChangelistDialog2" timestamp="1579583792002">
+    <state x="253" y="0" key="CommitChangelistDialog2" timestamp="1579585734599">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="253" y="0" key="CommitChangelistDialog2/0.0.1366.768@0.0.1366.768" timestamp="1579583792002" />
+    <state x="253" y="0" key="CommitChangelistDialog2/0.0.1366.768@0.0.1366.768" timestamp="1579585734599" />
     <state x="129" y="58" key="DiffContextDialog" timestamp="1579569228785">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
@@ -965,10 +968,10 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="115" y="39" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1579572477368" />
-    <state x="275" y="112" key="Vcs.Push.Dialog.v2" timestamp="1579583794263">
+    <state x="275" y="112" key="Vcs.Push.Dialog.v2" timestamp="1579585736501">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="275" y="112" key="Vcs.Push.Dialog.v2/0.0.1366.768@0.0.1366.768" timestamp="1579583794263" />
+    <state x="275" y="112" key="Vcs.Push.Dialog.v2/0.0.1366.768@0.0.1366.768" timestamp="1579585736501" />
     <state x="343" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1579574141923">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
