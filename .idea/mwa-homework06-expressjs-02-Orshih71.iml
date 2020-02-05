@@ -10,9 +10,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="mwa-homework05-expressjs-01-Orshih71" />
     <orderEntry type="module" module-name="mwa-homework-4-nodejs-03-Orshih71" />
-    <orderEntry type="library" name="@types/jquery" level="application" />
-    <orderEntry type="library" name="@types/rx" level="application" />
-    <orderEntry type="library" name="Rx" level="application" />
     <orderEntry type="module" module-name="mwa-homework-07-mongodb-01-Orshih71" />
+    <orderEntry type="module" module-name="mwa-homework-09-mongodb-03-Orshih71" />
   </component>
 </module>
